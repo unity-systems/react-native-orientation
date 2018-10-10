@@ -218,9 +218,17 @@ RCT_EXPORT_METHOD(unlockAllOrientations)
   #if DEBUG
     NSLog(@"Unlock All Orientations");
   #endif
-  [Orientation setOrientation:UIInterfaceOrientationMaskAllButUpsideDown];
+  [Orientation setOrientation:UIInterfaceOrientationMaskAll];
 //  AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 //  delegate.orientation = 3;
+}
+
+RCT_EXPORT_METHOD(lockToPortraitOrUpsideDown)
+{
+  #if DEBUG
+    NSLog(@"Locked to Portrait or UpsideDown");
+  #endif
+  [Orientation setOrientation:UIInterfaceOrientationMaskPortrait | UIInterfaceOrientationMaskPortraitUpsideDown];
 }
 
 - (NSDictionary *)constantsToExport

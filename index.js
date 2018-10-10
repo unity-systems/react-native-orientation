@@ -55,6 +55,10 @@ module.exports = {
     Orientation.unlockAllOrientations();
   },
 
+  lockToPortraitOrUpsideDown() {
+    Orientation.lockToPortraitOrUpsideDown();
+  },
+
   addOrientationListener(cb) {
     var key = getKey(cb);
     listeners[key] = DeviceEventEmitter.addListener(orientationDidChangeEvent,

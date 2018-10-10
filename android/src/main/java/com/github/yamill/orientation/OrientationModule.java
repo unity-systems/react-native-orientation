@@ -112,7 +112,16 @@ public class OrientationModule extends ReactContextBaseJavaModule implements Lif
         if (activity == null) {
             return;
         }
-        activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
+        activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_FULL_USER);
+    }
+
+    @ReactMethod
+    public void lockToPortraitOrUpsideDown() {
+        final Activity activity = getCurrentActivity();
+        if (activity == null) {
+            return;
+        }
+        activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
     }
 
     @Override
